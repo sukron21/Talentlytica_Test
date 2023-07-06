@@ -27,7 +27,7 @@ const Index = () => {
       });
     }
     const jsonString = JSON.stringify(data, null, 2);
-    const cleanedString = jsonString.replace(/"mahasiswa_/g, "mahasiswa_");
+    const cleanedString = jsonString.replace(/mahasiswa_/g, "mahasiswa_");
     const lines = cleanedString.split("\n");
     const indentedLines = lines.map((line) => line.trim());
     setDataJson(indentedLines.join("\n"));
