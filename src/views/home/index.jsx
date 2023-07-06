@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState,useRef,useEffect } from "react";
 
 const Index = () => {
   const [grades, setGrades] = useState([]);
   const [dataJson, setDataJson] = useState([]);
+  const targetRef = useRef(null);
 
   const handleInputChange = (index, aspekIndex, event) => {
     const newGrades = [...grades];
@@ -25,13 +26,20 @@ const Index = () => {
         const studentGrade = grade && grade[i] ? grade[i] : 0;
         data[aspekKey][studentKey] = studentGrade;
       });
+      targetRef.current.scrollIntoView({ behavior: 'auto' })
     }
     const jsonString = JSON.stringify(data, null, 2);
     const cleanedString = jsonString.replace(/mahasiswa_/g, "mahasiswa_");
     const lines = cleanedString.split("\n");
     const indentedLines = lines.map((line) => line.trim());
     setDataJson(indentedLines.join("\n"));
+    ;
   };
+  useEffect(() => {
+    if (dataJson !== null) {
+      targetRef.current.scrollIntoView({ behavior: 'auto' });
+    }
+  }, [dataJson]);
   
 
   return (
@@ -80,7 +88,7 @@ const Index = () => {
       {dataJson === null ? (
         <></>
       ) : (
-        <div className="container-fluid">
+        <div className="container-fluid" ref={targetRef}>
           <pre>{dataJson}</pre>
         </div>
       )}
