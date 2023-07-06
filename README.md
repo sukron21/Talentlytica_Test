@@ -1,7 +1,7 @@
 <h1>Test_Talentlytica</h1>
 
 ## Description
-This project was created to fulfill the technical test given by Global Talentlytica. I have attached the deploy link for this website [Website](https://helpful-shortbread-e99ba9.netlify.app/)
+This project was created to fulfill the technical test given by Global Talentlytica. I have attached the deploy link for this website [APP](https://helpful-shortbread-e99ba9.netlify.app/)
 
 ## Built With
 This app was built with some technologies below:
@@ -27,7 +27,7 @@ This app was built with some technologies below:
   <summary>
     Hal Utama
   </summary>
-<img src="/screenshoots/ss.PNG" alt="Login Optional Page" />
+<img src="/screenshot/ss.jpg" alt="Login Optional Page" />
 </details>
 
 
